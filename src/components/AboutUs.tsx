@@ -115,7 +115,7 @@ export const AboutUs = () => {
   return (
     <div
       ref={refContainer}
-      className="flex flex-col justify-center items-center w-full pb-[200px]"
+      className="flex flex-col h-[80vh] justify-center items-center"
     >
       <h1 ref={headingRef} className="text-3xl font-semibold">
         Why Choose Us
