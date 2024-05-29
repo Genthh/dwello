@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Residences() {
   const boxes = useRef<(HTMLDivElement | null)[]>([]);
+  const header = useRef<HTMLDivElement | null>(null);
   const refContainer = useRef<HTMLDivElement | null>(null);
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -20,6 +21,7 @@ export default function Residences() {
         toggleActions: "play reverse play reverse",
       },
     });
+    tl.fromTo(header.current, { opacity: 0 }, { opacity: 1, duration: 1.4 });
     tl.fromTo(
       boxes.current,
       { x: 100, opacity: 0 },
@@ -56,7 +58,9 @@ export default function Residences() {
       ref={refContainer}
       className="flex h-screen flex-col w-full justify-center items-center mb-10"
     >
-      <h1 className="text-3xl font-semibold">Our Popular Residences</h1>
+      <h1 ref={header} className="text-3xl font-semibold">
+        Our Popular Residences
+      </h1>
       <div className="flex gap-20">
         {boxContents.map((content, i) => (
           <div
