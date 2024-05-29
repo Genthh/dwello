@@ -31,18 +31,21 @@ export default function Residences() {
       {
         x: 0,
         opacity: 1,
-        duration: 1,
+        duration: 0.7,
         ease: "power2.out",
         stagger: 0.3,
       }
     );
 
-    if (contactUsRef.current) {
+    if (contactUsRef.current && refContainer.current) {
       ScrollTrigger.create({
         trigger: refContainer.current,
-        start: "bottom center",
+        start: "top 2%",
         onEnter: () =>
-          gsap.to(window, { duration: 1, scrollTo: contactUsRef.current }),
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: contactUsRef.current as HTMLElement,
+          }),
       });
     }
   }, []);
@@ -69,7 +72,7 @@ export default function Residences() {
     <div>
       <div
         ref={refContainer}
-        className="flex h-[80vh] flex-col w-full justify-center items-center mb-10"
+        className="flex h-[100vh] flex-col w-full justify-center items-center mb-10"
       >
         <h1 ref={header} className="text-3xl font-semibold">
           Our Popular Residences
