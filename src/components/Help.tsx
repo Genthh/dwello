@@ -17,9 +17,10 @@ const Help = () => {
     const tl = gsap.timeline();
     tl.fromTo(
       imgRef.current,
-      { x: "-50vh", opacity: 0 },
+      { x: "-50vh", y: 0, opacity: 0 },
       {
         x: 0,
+        y: 100,
         opacity: 1,
         duration: 1.4,
         ease: "power2.out",
