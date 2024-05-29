@@ -17,11 +17,11 @@ const Help = () => {
     const tl = gsap.timeline();
     tl.fromTo(
       imgRef.current,
-      { x: "-150vh", opacity: 0 },
+      { x: "-50vh", opacity: 0 },
       {
         x: 0,
         opacity: 1,
-        duration: 2.4,
+        duration: 1.4,
         ease: "power2.out",
         scrollTrigger: {
           trigger: modalRef.current,
